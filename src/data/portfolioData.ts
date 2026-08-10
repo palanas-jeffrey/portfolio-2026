@@ -1,14 +1,4 @@
-export type Project = {
-  title: string
-  category: string
-  summary: string
-  challenge: string
-  solution: string
-  result: string
-  stack: string[]
-  demo: string
-  github: string
-}
+
 
 export type Skill = {
   name: string
@@ -23,32 +13,46 @@ export type TimelineItem = {
 
 export const navItems = ['About', 'Projects', 'Skills', 'Contact']
 
+export type Project = {
+  title: string
+  category: string
+  summary: string
+  challenge: string
+  solution: string
+  result: string
+  stack: string[]
+  demo: string
+  github: string
+}
+
 export const projects: Project[] = [
   {
     title: 'Alumni Connect',
     category: 'Community platform',
     summary:
-      'A social and networking platform designed to connect graduates, mentors, and career partners across alumni groups.',
+      'A full-stack web platform built to connect alumni, share events, enable donations, and conduct tracer studies.',
     challenge:
-      'The platform needed to support dynamic community updates while keeping content discoverable and easy to navigate across devices.',
+      'Focused on ensuring secure access with password updates and recovery, implementing event notification emails, integrating a payment system (PayMongo), designing distinct admin and alumni interfaces, and building a dynamic tracer study module with customizable target year respondents and analytics.',
     solution:
-      'I designed the user experience around clear content flows, responsive layouts, and intake workflows for posts, events, and volunteer opportunities.',
-    result: 'Improved engagement by unifying the alumni experience into a single digital hub.',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB'],
+      'Developed core features including alumni directory, event management with email notifications, secure authentication, profile updates, and dynamic tracer study forms with reporting. Designed database schema with full CRUD functionality, integrated PayMongo for online donations, implemented role-based access, and built reporting tools with PDF conversion. Handled deployment end-to-end on Hostinger and maintained version control via GitHub.',
+    result:
+      'Delivered a scalable, centralized hub that improved alumni engagement, streamlined donation tracking, and provided actionable insights through tracer studies.',
+    stack: ['Laravel', 'Livewire', 'MariaDB', 'JavaScript', 'CSS'],
     demo: '#',
     github: '#',
   },
   {
-    title: 'Coastal Commerce',
-    category: 'E-commerce rebuild',
+    title: 'Alfa Laval Purifier (Asset Management)',
+    category: 'Asset management and inventory application',
     summary:
-      'An e-commerce platform for a product-led brand focused on conversion, trust, and streamlined customer journeys.',
+      'An asset management application enabling requisitions for spare parts with approval workflows and role‑based access.',
     challenge:
-      'The store had fragmented product information and a weak checkout flow, which lowered customer confidence and purchase completion.',
+      'Needed to implement secure authentication with signup/login/logout, enforce role restrictions for admin vs. user accounts, and design a requisition workflow that routed approvals to the Chief Engineer while ensuring efficient asset tracking.',
     solution:
-      'I rebuilt the browsing experience, simplified navigation, and created a clearer path from product discovery to checkout.',
-    result: 'Reduced friction across the buying journey and improved conversion quality across key pages.',
-    stack: ['React', 'PHP', 'MySQL', 'Git'],
+      'Developed CRUD operations for both users and administrators, built requisition workflows for spare part requests, and designed a responsive UI using HTML, CSS, JavaScript, Bootstrap, and jQuery. Leveraged Laravel + PHP for backend logic and MySQL for relational data storage. Deployed on Linux/Apache environment to ensure stable hosting and secure connectivity.',
+    result:
+      'Delivered a reliable asset management system that streamlined requisition approvals, improved spare part tracking, and enforced secure role-based access for administrators and users.',
+    stack: ['Laravel', 'PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery'],
     demo: '#',
     github: '#',
   },
@@ -69,13 +73,22 @@ export const projects: Project[] = [
 ]
 
 export const skills: Skill[] = [
-  { name: 'React', level: 92 },
+  { name: 'React', level: 80 },
   { name: 'Node.js', level: 86 },
   { name: 'Express.js', level: 82 },
   { name: 'MongoDB', level: 78 },
   { name: 'PHP', level: 74 },
+  { name: 'Laravel', level: 80 },
   { name: 'MySQL', level: 80 },
-  { name: 'Git', level: 90 },
+  { name: 'Git', level: 85 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'TypeScript', level: 80 },
+  { name: 'HTML', level: 90 },
+  { name: 'CSS', level: 88 },
+  { name: 'Bootstrap', level: 80 },
+  { name: 'jQuery', level: 75 },
+  { name: 'Tailwind CSS', level: 78 },
+  { name: 'Jest', level: 80 },
 ]
 
 export const timeline: TimelineItem[] = [
@@ -95,13 +108,13 @@ export const timeline: TimelineItem[] = [
     year: '2019',
     title: 'Associate Software Engineer',
     description:
-      'Gained professional experience developing full‑stack applications. Worked on Node.js backends and Angular/React frontends, optimizing queries, building dynamic UI components, and integrating APIs and AI agents. Tech Stack: React, Angular, Node.js, MongoDB, Git.',
+      'Gained professional experience developing full‑stack applications. Worked on Node.js backends and Angular/React frontends, optimizing queries, building dynamic UI components, and integrating APIs and AI agents. Tech Stack: React, Angular, Node.js, MongoDB, Git, Jest.',
   },
   {
     year: '2021',
     title: 'Fullstack Web Developer',
     description:
-      'Delivered clean, reliable user experiences with strong UX focus and performance awareness. Worked on responsive UI updates, accessibility features, and dynamic components using React, Angular, and ASP.NET. Collaborated with designers via Figma/InVision, optimized queries, integrated APIs and chatbots. Tech Stack: React, Angular, Node.js, ASP.NET, MongoDB, HTML, CSS, JavaScript, Bootstrap, jQuery, Tailwind, Git.',
+      'Delivered clean, reliable user experiences with strong UX focus and performance awareness. Worked on responsive UI updates, accessibility features, and dynamic components using React, Angular, and ASP.NET. Collaborated with designers via Figma/InVision, optimized queries, integrated APIs and chatbots. Tech Stack: React, Angular, Node.js, ASP.NET, MongoDB, HTML, CSS, JavaScript, Bootstrap, jQuery, Tailwind, Jest, Git.',
   },
 ];
 
