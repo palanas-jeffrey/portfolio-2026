@@ -39,7 +39,7 @@ export const projects: Project[] = [
       'Delivered a scalable, centralized hub that improved alumni engagement, streamlined donation tracking, and provided actionable insights through tracer studies.',
     stack: ['Laravel', 'Livewire', 'MariaDB', 'JavaScript', 'CSS'],
     demo: '#',
-    github: '#',
+    github: 'https://github.com/palanas-jeffrey/alumni-app',
   },
   {
     title: 'Alfa Laval Purifier (Asset Management)',
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     result: 'Created a stronger digital-first introduction that communicates both technical capability and product thinking.',
     stack: ['React', 'TypeScript', 'Vite', 'Framer Motion'],
     demo: '#',
-    github: '#',
+    github: 'https://github.com/palanas-jeffrey/portfolio-2026',
   },
 ]
 
