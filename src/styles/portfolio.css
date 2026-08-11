@@ -598,6 +598,13 @@
   opacity: 1;
 }
 
+.footer-verse {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
 @media (max-width: 960px) {
   .hero,
   .project-grid,
@@ -643,5 +650,9 @@
 
   .hero-copy h1 {
     line-height: 1.02;
+  }
+
+  .footer-verse {
+    margin: 0 16px;
   }
 }

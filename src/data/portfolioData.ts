@@ -153,6 +153,7 @@ export const footer = {
     { label: 'GitHub', href: 'https://github.com/palanas-jeffrey' },
     { label: 'Email', href: 'mailto:palanas.jeffrey@gmail.com' },
   ],
+  verse: 'Commit to the Lord whatever you do, and he will establish your plans. - Proverbs 16:3',
 };
 
 export const header = {
@@ -179,7 +180,7 @@ export const hero = {
   panel: {
     badge: 'Available for work',
     focus: 'Full-stack product builds',
-    stack: ['React', 'Node', 'MongoDB'],
+    stack: ['React', 'Node', 'MongoDB', 'Laravel', 'JavaScript'],
     code: `const profile = {
       mindset: 'build reliable systems',
       craft: ['UX', 'API', 'Performance'],

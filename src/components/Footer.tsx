@@ -19,6 +19,7 @@ export function Footer() {
           ))}
         </div>
       </div>
+      <p className="footer-verse">{footer.verse}</p>
     </footer>
   )
 }
