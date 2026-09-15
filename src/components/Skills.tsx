@@ -1,12 +1,24 @@
 import { motion } from 'framer-motion'
 
-import type { Skill } from '../data/portfolioData'
+import { skills } from '../data/portfolioData'
 
-type SkillsProps = {
-  skills: Skill[]
+export type Skill = {
+  name: string
+  category: string
 }
 
-export function Skills({ skills }: SkillsProps) {
+function groupByCategory(skills: Skill[]) {
+  return skills.reduce<Record<string, Skill[]>>((groups, skill) => {
+    const group = groups[skill.category] ?? []
+    group.push(skill)
+    groups[skill.category] = group
+    return groups
+  }, {})
+}
+
+export function Skills() {
+  const grouped = groupByCategory(skills)
+
   return (
     <motion.section
       id="skills"
@@ -21,28 +33,31 @@ export function Skills({ skills }: SkillsProps) {
         <h2>Tools I use to turn complexity into clarity.</h2>
       </div>
 
-      <div className="skills-grid">
-        {skills.map((skill, index) => (
+      <div className="skills-groups">
+        {Object.entries(grouped).map(([category, items], groupIndex) => (
           <motion.div
-            key={skill.name}
-            className="skill-card"
-            initial={{ opacity: 0, y: 24 }}
+            key={category}
+            className="skill-group"
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.06, ease: 'easeOut' }}
-            whileHover={{ y: -6 }}
+            transition={{ duration: 0.5, delay: groupIndex * 0.08, ease: 'easeOut' }}
           >
-            <div className="skill-header">
-              <span>{skill.name}</span>
-              <span>{skill.level}%</span>
-            </div>
-            <div className="skill-track" aria-label={`${skill.name} proficiency`}>
-              <motion.span
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-              />
+            <span className="skill-group-label">{category}</span>
+            <div className="skill-tags">
+              {items.map((skill, index) => (
+                <motion.span
+                  key={skill.name}
+                  className="skill-tag"
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.35, delay: index * 0.03, ease: 'easeOut' }}
+                  whileHover={{ y: -2 }}
+                >
+                  {skill.name}
+                </motion.span>
+              ))}
             </div>
           </motion.div>
         ))}
