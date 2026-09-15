@@ -1,8 +1,9 @@
 import { type FormEvent, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 
 import { contact } from '../data/portfolioData'
+
+import { sendContactEmail } from '../services/emailService'
 
 type ContactProps = {
   submitted: boolean
@@ -17,28 +18,38 @@ export function Contact({ submitted, onSubmit }: ContactProps) {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !templateId || !publicKey) {
-      setErrorMessage('Email service is not configured. Add EmailJS credentials to your .env file.')
-      return
-    }
-
     if (!formRef.current) return
 
     setIsSending(true)
     setErrorMessage('')
 
     try {
-      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-      setIsSending(false)
+      const formData = new FormData(formRef.current)
+      const name = formData.get('from_name')
+      const email = formData.get('from_email')
+      const message = formData.get('message')
+
+      if (
+        typeof name !== 'string' ||
+        typeof email !== 'string' ||
+        typeof message !== 'string'
+      ) {
+        throw new Error('Contact form data is invalid')
+      }
+
+      await sendContactEmail({
+        name,
+        email,
+        subject: 'Portfolio contact form message',
+        message,
+      })
+
       formRef.current.reset()
       onSubmit(event)
-    } catch (error) {
-      setIsSending(false)
+    } catch {
       setErrorMessage('Something went wrong while sending the message. Please try again.')
+    } finally {
+      setIsSending(false)
     }
   }
 
