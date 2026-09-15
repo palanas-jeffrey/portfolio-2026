@@ -1,4 +1,5 @@
 import { header } from '../data/portfolioData';
+import { isBuildsRoute } from '../routes'
 
 type HeaderProps = {
   darkMode: boolean
@@ -7,6 +8,8 @@ type HeaderProps = {
 }
 
 export function Header({ darkMode, onToggle, navItems }: HeaderProps) {
+  const isBuildsPage = isBuildsRoute(window.location.pathname)
+
   return (
     <header className="topbar">
       <div className="brand-wrap">
@@ -16,7 +19,14 @@ export function Header({ darkMode, onToggle, navItems }: HeaderProps) {
 
       <nav className="main-nav" aria-label="Main navigation">
         {navItems.map((item) => (
-          <a key={item} href={`#${item.toLowerCase()}`}>
+          <a
+            key={item}
+            href={
+              isBuildsPage
+                ? `${import.meta.env.BASE_URL}#${item.toLowerCase()}`
+                : `#${item.toLowerCase()}`
+            }
+          >
             {item}
           </a>
         ))}
