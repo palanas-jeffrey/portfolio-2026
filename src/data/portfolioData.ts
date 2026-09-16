@@ -243,7 +243,6 @@ export const hero = {
     'I’m a developer who thrives on turning complex systems into intuitive, dependable digital experiences. My background in marine engineering taught me how to solve problems under pressure, and that mindset now shapes the way I build software.',
   actions: {
     primary: 'Explore projects',
-    secondary: 'Download resume',
   },
   stats: [
     { value: '7+', label: 'years of professional dev experience.' },

@@ -18,9 +18,6 @@ export function Hero() {
           <a className="button primary" href="#projects">
             {hero.actions.primary}
           </a>
-          {/* <a className="button secondary" href="/jeffrey-palanas-resume.txt" download>
-            {hero.actions.secondary}
-          </a> */}
         </div>
 
         <ul className="stats-list" aria-label="Key metrics">
