@@ -100,7 +100,7 @@ export function Projects({ projects }: ProjectsProps) {
         ))}
       </div>
       <a
-        className="button secondary builds-cta"
+        className="button primary builds-cta"
         href={`${import.meta.env.BASE_URL}${routes.builds.slice(1)}`}
       >
         View other builds

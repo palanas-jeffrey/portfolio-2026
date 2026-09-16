@@ -337,7 +337,6 @@
   margin-bottom: 0;
   font-size: clamp(2rem, 3vw, 3rem);
   letter-spacing: -0.05em;
-  max-width: 760px;
 }
 
 .project-grid {
@@ -906,6 +905,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .skill-group-label {
