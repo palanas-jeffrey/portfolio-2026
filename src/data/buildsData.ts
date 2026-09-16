@@ -20,7 +20,7 @@ export const builds: Build[] = [
     demo: null,
     screenshot: [cloudflare  + 'hotel.png'],
     frontend: "https://github.com/palanas-jeffrey/capstone-hotel-frontend",
-    backend: "https://github.com/palanas-jeffrey/capstone-hotel-backend",
+    backend: "https://github.com/palanas-jeffrey/capstone-hotel-BE",
   },
   {
     name: 'Restaurant App',
