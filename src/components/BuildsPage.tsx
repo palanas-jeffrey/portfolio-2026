@@ -2,12 +2,13 @@ import { motion } from 'framer-motion'
 
 import { BuildCard } from './BuildCard'
 import { builds, buildPageContent } from '../data/buildsData'
+import { routes, withBaseUrl } from '../routes'
 
 export function BuildsPage() {
   return (
     <section className="section builds-page">
       <div className="builds-page-intro">
-        <a className="back-link" href={buildPageContent.backLink.href}>
+        <a className="back-link" href={withBaseUrl(routes.home)}>
           {buildPageContent.backLink.text}
         </a>
         <motion.div

@@ -53,7 +53,6 @@ export const buildPageContent = {
   description: 'A collection of practice projects and smaller builds that helped me sharpen my craft.',
   backLink: {
     text: '← Back to portfolio',
-    href: '/',
   },
   headSpan: 'Builds',
 }

@@ -1,5 +1,5 @@
 import { header } from '../data/portfolioData';
-import { isBuildsRoute } from '../routes'
+import { isBuildsRoute, withBaseUrl } from '../routes'
 
 type HeaderProps = {
   darkMode: boolean
@@ -23,7 +23,7 @@ export function Header({ darkMode, onToggle, navItems }: HeaderProps) {
             key={item}
             href={
               isBuildsPage
-                ? `${import.meta.env.BASE_URL}#${item.toLowerCase()}`
+                ? `${withBaseUrl('')}#${item.toLowerCase()}`
                 : `#${item.toLowerCase()}`
             }
           >
