@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion'
 
 import { BuildCard } from './BuildCard'
-import { builds } from '../data/buildsData'
-import { routes } from '../routes'
+import { builds, buildPageContent } from '../data/buildsData'
 
 export function BuildsPage() {
   return (
     <section className="section builds-page">
       <div className="builds-page-intro">
-        <a className="back-link" href={`${import.meta.env.BASE_URL}${routes.home.slice(1)}`}>
-          ← Back to portfolio
+        <a className="back-link" href={buildPageContent.backLink.href}>
+          {buildPageContent.backLink.text}
         </a>
         <motion.div
           className="section-heading"
@@ -17,11 +16,10 @@ export function BuildsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <span>Builds</span>
-          <h1>Small projects, practical experiments.</h1>
+          <span>{buildPageContent.headSpan}</span>
+          <h1>{buildPageContent.title}</h1>
           <p>
-            A collection of practice projects and smaller builds that helped me
-            sharpen my craft.
+            {buildPageContent.description}
           </p>
         </motion.div>
       </div>

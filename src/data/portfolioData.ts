@@ -205,7 +205,7 @@ export const contact = {
       message: 'Tell me about your project or role.',
     },
     submit: 'Send message',
-    success: 'Thanks! Your message is ready to send.',
+    success: 'Thanks! Your message is sent.',
   },
 };
 
