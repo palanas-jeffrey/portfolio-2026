@@ -451,11 +451,11 @@
 }
 
 .screenshot-modal-arrow-previous {
-  left: 1rem;
+  left: -1rem;
 }
 
 .screenshot-modal-arrow-next {
-  right: 1rem;
+  right: -1rem;
 }
 
 .screenshot-modal-counter {
