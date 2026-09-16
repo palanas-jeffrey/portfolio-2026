@@ -1,5 +1,5 @@
 import { header } from '../data/portfolioData';
-import { isBuildsRoute, withBaseUrl } from '../routes'
+import { isBuildsRoute, withHashRoute } from '../routes'
 
 type HeaderProps = {
   darkMode: boolean
@@ -8,7 +8,7 @@ type HeaderProps = {
 }
 
 export function Header({ darkMode, onToggle, navItems }: HeaderProps) {
-  const isBuildsPage = isBuildsRoute(window.location.pathname)
+  const isBuildsPage = isBuildsRoute(window.location.pathname, window.location.hash)
 
   return (
     <header className="topbar">
@@ -23,7 +23,7 @@ export function Header({ darkMode, onToggle, navItems }: HeaderProps) {
             key={item}
             href={
               isBuildsPage
-                ? `${withBaseUrl('')}#${item.toLowerCase()}`
+                ? withHashRoute(item.toLowerCase())
                 : `#${item.toLowerCase()}`
             }
           >

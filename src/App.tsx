@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 
 import './styles/base.css'
 import './styles/portfolio.css'
@@ -16,7 +16,15 @@ import { isBuildsRoute } from './routes'
 function App() {
   const [darkMode, setDarkMode] = useState(true)
   const [submitted, setSubmitted] = useState(false)
-  const isBuildsPage = isBuildsRoute(window.location.pathname)
+  const [routeHash, setRouteHash] = useState(window.location.hash)
+  const isBuildsPage = isBuildsRoute(window.location.pathname, routeHash)
+
+  useEffect(() => {
+    const handleHashChange = () => setRouteHash(window.location.hash)
+    window.addEventListener('hashchange', handleHashChange)
+
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()

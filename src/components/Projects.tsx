@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 import  { type Project, projectHeading } from '../data/portfolioData'
-import { routes, withBaseUrl } from '../routes'
+import { routes, withHashRoute } from '../routes'
 import { ScreenshotThumbnail } from './ScreenshotThumbnail'
 
 type ProjectsProps = {
@@ -101,7 +101,7 @@ export function Projects({ projects }: ProjectsProps) {
       </div>
       <a
         className="button primary builds-cta"
-        href={withBaseUrl(routes.builds)}
+        href={withHashRoute(routes.builds)}
       >
         View other builds
       </a>

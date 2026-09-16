@@ -10,9 +10,15 @@ export function withBaseUrl(path: string) {
   return `${baseUrl}${path.replace(/^\/+/, '')}`
 }
 
-export function isBuildsRoute(pathname: string) {
+export function withHashRoute(path: string) {
+  return `${withBaseUrl('')}#/${path.replace(/^\/+/, '')}`
+}
+
+export function isBuildsRoute(pathname: string, hash: string) {
+  const routePath = hash.startsWith('#/') ? hash.slice(1) : pathname
+
   return (
-    pathname.endsWith(routes.builds) ||
-    pathname.endsWith(routes.projectsArchive)
+    routePath.endsWith(routes.builds) ||
+    routePath.endsWith(routes.projectsArchive)
   )
 }
