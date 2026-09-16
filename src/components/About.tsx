@@ -13,7 +13,7 @@ export function About({ timeline }: AboutProps) {
       className="section"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 'some' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="section-heading">
@@ -35,7 +35,7 @@ export function About({ timeline }: AboutProps) {
               className="timeline-item"
               initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.45, delay: index * 0.08, ease: 'easeOut' }}
             >
               <span className="timeline-year">{item.year}</span>
