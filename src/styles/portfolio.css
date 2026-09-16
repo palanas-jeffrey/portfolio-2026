@@ -752,10 +752,46 @@
   border-color: rgba(125, 211, 252, 0.4);
 }
 
-.form-success {
-  margin: 0;
-  color: #34d399;
+.contact-toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 30;
+  max-width: min(24rem, calc(100% - 2.5rem));
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 0.9rem;
+  background: var(--panel);
+  box-shadow: 0 18px 50px var(--shadow);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-toast-close {
+  flex: 0 0 auto;
+  border: 0;
+  padding: 0.1rem 0.35rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.contact-toast-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.contact-toast-success {
+  color: #34d399;
+}
+
+.contact-toast-error {
+  color: #fda4af;
 }
 
 .site-footer {

@@ -1,4 +1,4 @@
-import { type FormEvent, useRef, useState } from 'react'
+import { type FormEvent, useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import { contact } from '../data/portfolioData'
@@ -14,6 +14,20 @@ export function Contact({ submitted, onSubmit }: ContactProps) {
   const formRef = useRef<HTMLFormElement>(null)
   const [isSending, setIsSending] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [isToastVisible, setIsToastVisible] = useState(false)
+
+  useEffect(() => {
+    if (!submitted && !errorMessage) {
+      return
+    }
+
+    setIsToastVisible(true)
+    const timeoutId = window.setTimeout(() => {
+      setIsToastVisible(false)
+    }, 5000)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [submitted, errorMessage])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -88,19 +102,28 @@ export function Contact({ submitted, onSubmit }: ContactProps) {
           {isSending ? 'Sending...' : contact.form.submit}
         </button>
 
-        {submitted && (
-          <motion.p
-            className="form-success"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {contact.form.success}
-          </motion.p>
-        )}
-
-        {errorMessage && <p className="form-error">{errorMessage}</p>}
       </form>
+
+      {isToastVisible && (submitted || errorMessage) && (
+        <motion.div
+          className={`contact-toast ${errorMessage ? 'contact-toast-error' : 'contact-toast-success'}`}
+          role={errorMessage ? 'alert' : 'status'}
+          aria-live={errorMessage ? 'assertive' : 'polite'}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <span>{errorMessage || contact.form.success}</span>
+          <button
+            type="button"
+            className="contact-toast-close"
+            onClick={() => setIsToastVisible(false)}
+            aria-label="Close notification"
+          >
+            ×
+          </button>
+        </motion.div>
+      )}
     </motion.section>
   )
 }
