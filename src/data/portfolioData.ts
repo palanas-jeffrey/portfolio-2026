@@ -163,6 +163,23 @@ export const skills: Skill[] = [
   { name: 'Git', category: 'Infra & tools' },
 ];
 
+export const workedWith: Skill[] = [
+  { name: 'C#', category: 'Languages' },
+
+  { name: 'Angular', category: 'Frontend' },
+
+  { name: 'ASP.net', category: 'Backend' },
+  { name: 'Razor Pages', category: 'Backend' },
+
+  { name: 'axe', category: 'Accessibility & QA tools' },
+  { name: 'IBM Equal Access', category: 'Accessibility & QA tools' },
+  { name: 'NVDA', category: 'Accessibility & QA tools' },
+  { name: 'Litmus', category: 'Accessibility & QA tools' },
+
+  { name: 'Figma', category: 'Design collaboration' },
+  { name: 'InVision', category: 'Design collaboration' },
+];
+
 export const timeline: TimelineItem[] = [
   {
     year: '2014',
@@ -171,23 +188,29 @@ export const timeline: TimelineItem[] = [
       'Worked on high-stakes engineering systems where reliability, troubleshooting, and operational continuity were mission critical.',
   },
   {
-    year: '2018',
+    year: '2018 (Nov) – 2019 (Mar)',
     title: 'Transition into Software Development',
     description:
-      'Shifted from marine engineering maintenance into application and web development. Completed a coding boot camp and built projects that merge structured problem‑solving with modern digital solutions.',
+      "Shifted from marine engineering into software development. Completed Zuitt's (then Tuitt) full-stack coding bootcamp, covering HTML, CSS, Bootstrap, JavaScript, jQuery, PHP, Laravel, MySQL, Node.js, Express, MongoDB, JWT authentication, and API testing with Postman — including deployment practice on Hostinger and Heroku. Built and deployed multiple practice projects and required capstones to complete the program.",
   },
   {
     year: '2019',
     title: 'Associate Software Engineer',
     description:
-      'Gained professional experience developing full‑stack applications. Worked on Node.js backends and Angular/React frontends, optimizing queries, building dynamic UI components, and integrating APIs and AI agents. Tech Stack: React, Angular, Node.js, MongoDB, Git, Jest.',
+      "Joined an AI-focused engineering team, contributing to multiple internal platforms (details under NDA). On one project, translated a backend API server from Python to Node.js and migrated its database to MongoDB; contributed to a UI redesign, including a complex multi-level accordion component built to avoid duplicated logic and render performance issues, and a drag-and-drop feature — my first time working with React. Later studied Angular and worked on a separate project integrating multiple AI chat providers, where I diagnosed and fixed a slow backend by replacing nested loops with MongoDB's aggregation pipeline. Tech Stack: React, Angular, Node.js, MongoDB, Python, Git, Jest.",
   },
   {
     year: '2021',
-    title: 'Fullstack Web Developer',
+    title: 'Web Developer',
     description:
-      'Delivered clean, reliable user experiences with strong UX focus and performance awareness. Worked on responsive UI updates, accessibility features, and dynamic components using React, Angular, and ASP.NET. Collaborated with designers via Figma/InVision, optimized queries, integrated APIs and chatbots. Tech Stack: React, Angular, Node.js, ASP.NET, MongoDB, HTML, CSS, JavaScript, Bootstrap, jQuery, Tailwind, Jest, Git.',
+      'Joined as a frontend-focused Web Developer, building and rebranding pages while embedding accessibility into every implementation — not as a separate task, but as a standard applied across all HTML/component work and existing-page fixes. Solved non-trivial compliance problems, including writing custom JavaScript to make components like carousels fully accessible. Ensured semantic structure, keyboard navigation, and modal focus trapping in line with WCAG/W3C standards — certified in accessibility (Deque), auditing with axe, IBM Equal Access, and NVDA. Also built and rigorously tested HTML email templates for consistent rendering across Outlook, Gmail, and other clients. Tech Stack: React, HTML, CSS, JavaScript, Bootstrap, jQuery, Tailwind, Figma/InVision.',
   },
+  {
+    year: '2024',
+    title: 'Expanded into Fullstack Development',
+    description: 
+    "Took on fullstack responsibilities alongside continuing my existing frontend, accessibility, and email development work — expanding scope, not replacing it. The main new challenge was C# and Razor pages, since API development itself was already familiar from prior experience translating a Python backend to Node.js and building API servers during bootcamp. Rebuilt cookie management/consent flows, updated API routing to a new C# service, and learned to debug in Visual Studio. Fixed Razor pages and React-built widgets, and wrote unit tests. Tech Stack: C#, ASP.NET, Razor Pages, React, Jest, Git."
+  }
 ];
 
 export const contact = {
@@ -259,3 +282,9 @@ export const hero = {
     }`,
   },
 };
+
+export const skillsData = {
+  eyebrow: 'Core stack',
+  title: 'Tools I use to turn complexity into clarity.',
+  workedWith: 'Also worked with (professional experience)',
+}
